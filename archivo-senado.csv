@@ -1,3 +1,3 @@
-"party_long,""country"",""party_short"",""government"",""seats"",""orden"",""colour"",""years"",""house"""
-"FRENTE A,""CORRIENTES"",""ALIANZA FRENTE PARA LA VICTORIA"",""1"",""110"",""1"",""#2b8cbe"",""2021"",""ALMIRÓN"""
-"FRENTE B,""TUCUMÁN"",""ALIANZA FRENTE PRO"",""0"",""90"",""2"",""#a6bddb"",""2021"",""ALPEROVICH"""
+party_long,country,party_short,government,seats,orden,colour,years,house
+FRENTE A,CORRIENTES,ALIANZA FRENTE PARA LA VICTORIA,1,110,1,#2b8cbe,2021,ALMIRÓN
+FRENTE B,TUCUMÁN,ALIANZA FRENTE PRO,0,90,2,#a6bddb,2021,ALPEROVICH
