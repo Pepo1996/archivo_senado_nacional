@@ -1,0 +1,26 @@
+install.packages("ggparliament")
+devtools::install_github("robwhickman/ggparliament")
+
+library(ggparliament)
+library(ggplot2)
+library(tidyverse)
+library(plotly)
+library(sf)
+library(devtools)
+germany <- election_data %>%
+  filter(year == 2017 & 
+           country == "Germany") 
+
+germany <- parliament_data(election_data = germany, 
+                           parl_rows = 10,
+                           type = 'semicircle',
+                           party_seats = germany$seats)
+
+bundestag <- ggplot(germany, aes(x, y, colour = party_short)) +
+  geom_parliament_seats(size = 3) +
+  labs(colour="Party") +  
+  theme_ggparliament(legend = TRUE) +
+  scale_colour_manual(values = germany$colour, 
+                      limits = germany$party_short) 
+
+bundestag

@@ -1,0 +1,128 @@
+
+#Set working directory
+# setwd() #Choose a folder that you can locate
+setwd(tempdir()) #Let R set a folder for you. Locate it with getwd()
+getwd() #Show folder
+
+#Read the data
+urldatos <- 'http://www.geografiafisica.org/sem201901/geo112/datos_campo_201901/'
+clastosatr <- read.csv(
+  paste0(
+    urldatos,
+    'clastosatr_carolaine.csv'
+  ),
+  encoding = "UTF-8",
+  check.names = F
+)
+
+#Editing unidad geomorfológica to avoid the fake level "terraza"
+clastosatr$`unidad geomorfológica` <- gsub("terraza", "Terraza", clastosatr$`unidad geomorfológica`)
+
+#Display the data
+View(clastosatr)
+
+#One boxplot of a quantitative variable against one qualitative variable
+boxplot(
+  `largo (a)`~`código de lugar`,
+  clastosatr
+)
+
+#Separated window
+dev.new()
+boxplot(
+  `largo (a)`~`código de lugar`,
+  clastosatr
+)
+#Note: don't close the newly created window
+
+#A boxplot in the previous window showing largo (a) against unidad geomorfológica
+boxplot(
+  `largo (a)`~`unidad geomorfológica`,
+  clastosatr
+)
+
+#Using ggplot2
+ggplot(clastosatr) +
+  aes(x = `unidad geomorfológica`, y = `largo (a)`) + #Aesthetic
+  geom_boxplot() + #Geometry
+  theme(text = element_text(size = 22)) #Text size
+
+#Back again with graphics package, set colors
+dev.new()
+boxplot(
+  `largo (a)`~`código de lugar`,
+  clastosatr,
+  col = palette(rainbow(7))
+)
+
+#Boxplot panel for multiple quantitative variables
+dev.new()
+par(mfrow=c(1,3))
+ejes <- c('largo (a)', 'ancho (b)', 'espesor (c)')
+sapply(
+  ejes,
+  function(z){
+    boxplot(get(z)~`código de lugar`,
+            clastosatr,
+            col = palette(rainbow(7)))
+  }
+)
+
+#Ana samples
+clastosatrana <- read.csv(
+  paste0(
+    urldatos,
+    'clastosatr_ana.csv'
+  ),
+  encoding = "UTF-8",
+  check.names = F
+)
+
+#Column names are equal?
+all.equal(colnames(clastosatr), colnames(clastosatrana))
+
+#Binding
+clastosatrboth <- rbind(clastosatr, clastosatrana)
+
+#Taking two samples from each student
+sampana <- as.character(
+  sample(
+    clastosatrboth[
+      clastosatrboth$responsables %in% 'ANA Valera',
+      'código de lugar'],
+    2
+  )
+)
+sampcar <- as.character(
+  sample(
+    clastosatrboth[
+      clastosatrboth$responsables %in% 'Carolain Pérez',
+      'código de lugar'],
+    2
+  )
+)
+clastosatrsample <- clastosatrboth[clastosatrboth$`código de lugar` %in% c(sampana, sampcar), ]
+
+#Tidyverse way for reading tables from both students, and selecting 2 samples from each of them.
+#This way gets the same result as previous lines but using less code
+library(tidyverse)
+tidyall <- bind_rows(
+  read_csv(
+    paste0(
+      urldatos,
+      'clastosatr_carolaine.csv'
+    )
+  ),
+  read_csv(
+    paste0(
+      urldatos,
+      'clastosatr_ana.csv'
+    )
+  )
+) %>% mutate(
+  `unidad geomorfológica` = gsub("terraza", "Terraza", `unidad geomorfológica`)
+) %>% mutate(codresp = paste(`código de lugar`, responsables, sep = '-')) %>%
+  dplyr::filter(
+    codresp %in% sample(unique(grep('ANA', codresp, value = T)), 2) |
+      codresp %in% sample(unique(grep('Carolain', codresp, value = T)), 2)
+  )

@@ -1,0 +1,7 @@
+install.packages("readx1")
+
+library("readx1")
+
+file.choose()
+ruta_excel <- "C:\\Users\\Lenovo\\Desktop\\Congreso R\\ListadoDeSenadores.xls"
+excel_sheets(ruta_excel)

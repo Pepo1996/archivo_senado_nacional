@@ -1,0 +1,215 @@
+Hola
+1
+"Hola"
+1+1
+1+1
+1 + 1
+5>3
+5*8
+1==3
+x <- 1
+x
+1
+x
+a <- 1 + 1
+x + a
+a <- 1+1
+x <-1
+x + a
+xa <- 1+1+1
+x + a
+xa <- x + a
+XA
+xas3 <- x + a
+x <- 2
+x
+pepito <- "amor"
+amor
+pepito
+sofi <- nerd
+sofi <- "nerd"
+sofi
+sofi <-"la mas linda de todo el mundo y del universo""
+sofi <-"la mas linda de todo el mundo y del universo""
+sofi
+sofi
+sofi <- "la mas linda de todo el mundo y del universo"
+sofi
+matrix(11 nrow = 11)
+variable_numerica <- 3.14
+class(variable_numerica)
+variable_text<-"Hola, Munto!"
+variable_text<-"Hola, Mundo!"
+class(variable_text)
+variable_verdad <- TRUE #true va con mayus: booleano
+class(variable_verdad)
+variable_n <- "3.14"
+class(variable_n)
+variable_numerica + 6
+as.numeric(variable_n)
+variable_n<- as.numeric(variable_n)
+variable_n + 6
+esto_vector <- c(4, 3, 2)
+sum(esto_vector)
+mean(esto_vector)
+esto_vector_character <- c("hola", "soy", "guada")
+class(esto_vector_character)
+## TIDYVERSE
+# INSTALAMOS PAQUETES
+#es necesario instalar y activar los paquetes. es recomendable hacerlo cada vez
+#que se van a usar para actualizarlos
+install.packages("tidyverse")
+#Lo activamos
+library(tidyverse)
+library(plotly)
+library(sf)
+#Cargamos el data frame con el que vamos a trabajar
+#Tenemos dos opciones:
+#OPCION 1 (desde internet con el siguiente link):
+data <- read.csv("https://github.com/labpoliticasuba/Clases_2020/raw/master/Clase_02/data_final_clase.csv", fileEncoding = "UTF-8")
+#OPCION 2 (desde nuestra pc):
+### descargamos el archivo,
+### lo ubicamos en la carpeta de nuestro proyecto
+### hacemos click derecho en la carpeta > Propiedades > copiamos y pegamos el path
+### path: dirección donde se encuentra almacenado nuestro csv
+data <- read.csv("D:/Guada/Clases/Lab_Pol_Publ/Tidyverse/data_final_clase.csv")
+#Lo activamos
+library(tidyverse)
+#Lo activamos
+library(tidyverse)
+library(plotly)
+install.packages("plotly")
+library(plotly)
+library(sf)
+#Lo activamos
+library(tidyverse)
+View(data)
+variable_numerica <- 3.14
+install.packages("plotly")
+a <- 1+1
+x <-1
+x + a
+xas3 <- x + a
+x <- 2
+x
+pepito <- "amor"
+pepito
+sofi <- "nerd"
+variable_numerica <- 3.14
+class(variable_numerica) #analiza el tipo de variable
+variable_text<-"Hola, Mundo!"
+class(variable_text)
+variable_verdad <- TRUE #true va con mayus: booleano
+class(variable_verdad)
+variable_n <- "3.14" #comillas = caracter
+class(variable_n)
+variable_numerica + 6
+#a veces es necesario convertir variables string (caracter) a numero
+### COMO PUEDO CONVERTIR VARIABLE CHARACTER EN NUMERICA
+as.numeric(variable_n)
+#hay que asignar y pisar
+variable_n<- as.numeric(variable_n)
+variable_n + 6
+## todo es una suma y una funcion en R
+esto_vector <- c(4, 3, 2) #vector numerico de tres elementos
+sum(esto_vector) #suma los elementos del vector
+mean(esto_vector) #calcula el promedio
+esto_vector_character <- c("hola", "soy", "guada")
+class(esto_vector_character)
+variable_numerica <- 3.14
+class(variable_numerica) #analiza el tipo de variable
+## TIDYVERSE
+# INSTALAMOS PAQUETES
+#es necesario instalar y activar los paquetes. es recomendable hacerlo cada vez
+#que se van a usar para actualizarlos
+install.packages("tidyverse")
+library(sf)
+library(plotly)
+#Lo activamos
+library(tidyverse)
+View(data)
+install.packages("ggplot2")
+install.packages("readx1")
+library("readx1")
+install.packages("readx1")
+library("readx1")
+file.choose()
+ruta_excel <- "C:\\Users\\Lenovo\\Desktop\\Congreso R\\ListadoDeSenadores.xls"
+excel_sheets(ruta_excel)
+install.packages("readx1")
+library("readx1")
+library("readx1")
+file.choose()
+library("readx1")
+install.packages("readx1")
+library("readx1")
+library(readxl)
+library("readx1")
+install.packages("readx1")
+library("readx1")
+install.packages("choroplethr")
+install.packages("choroplethrMaps")
+install.packages("DescTools")
+install.packages("dplyr")
+install.packages("readr")
+library(choroplethr)
+library(choroplethrMaps)
+library(DescTools)
+library(dplyr)
+library(ggplot2)
+library(readr)
+file.choose()
+ruta_excel("C:\\Users\\Lenovo\\Desktop\\Congreso R\\ListadoDeSenadores.xls")
+excel_sheets(ruta_excel)
+ggplotly(p)
+install.packages("rtweet")
+library("rtweet")
+library(rtweet)
+install.packages("readx1")
+library (readxl)
+library (readxl)
+library(choroplethr)
+library(choroplethrMaps)
+library(DescTools)
+library(dplyr)
+library(ggplot2)
+library(readr)
+file.choose()
+ruta_excel("C:\\Users\\Lenovo\\Desktop\\Congreso R\\ListadoDeSenadores.xls")
+excel_sheets(ruta_excel)
+ggplotly(p)
+install.packages("pacman")
+library(pacman)
+library (readxl)
+library(choroplethr)
+library(choroplethrMaps)
+library(DescTools)
+library(dplyr)
+library(ggplot2)
+library(readr)
+file.choose()
+ruta_excel("C:\\Users\\Lenovo\\Desktop\\Congreso R\\ListadoDeSenadores.xls")
+excel_sheets(ruta_excel)
+ggplotly(p)
+install.packages("plotly")
+library(plotly)
+library(pacman)
+library (readxl)
+library(choroplethr)
+library(choroplethrMaps)
+library(DescTools)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(plotly)
+file.choose()
+ruta_excel("C:\\Users\\Lenovo\\Desktop\\Congreso R\\ListadoDeSenadores.xls")
+excel_sheets(ruta_excel)
+ggplotly(p)
+install.packages("choroplethr")
+install.packages("choroplethrMaps")
+install.packages("DescTools")
+install.packages("dplyr")
+install.packages("readr")
+install.packages("readx1")
+install.packages("pacman")

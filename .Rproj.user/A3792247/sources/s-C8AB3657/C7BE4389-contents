@@ -1,0 +1,33 @@
+install.packages("choroplethr")
+install.packages("choroplethrMaps")
+install.packages("DescTools")
+install.packages("dplyr")
+install.packages("readr")
+install.packages("readx1")
+install.packages("pacman")
+install.packages("plotly")
+library(pacman)
+library (readxl)
+library(choroplethr)
+library(choroplethrMaps)
+library(DescTools)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(plotly)
+file.choose()
+ruta_excel("C:\\Users\\Lenovo\\Desktop\\Congreso R\\ListadoDeSenadores.xls")
+excel_sheets(ruta_excel)
+
+##Gráfico 
+p <- ggplot(data=Ejercicio_CLASE_pipe, aes(x=SENADORES, y=CANT_SENADORES, fill=PARTIDOS)) +
+  geom_bar(colour="black", stat="identity") +
+  guides(fill=FALSE) +
+  xlab("SENADORES") +
+  ylab("Cantidad de senadores") + # Set axis labels
+  ggtitle("SENADO")  +
+  geom_text(aes(label=CANT_MEDICOS_CADA_CIENMIL), vjust=1.6, color="black", size=3.5)
+p
+ggplotly(p)
+
+
